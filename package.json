@@ -1,0 +1,36 @@
+{
+  "name": "karma-preprocess-preprocessor",
+  "version": "0.1.0",
+  "main": "index.js",
+  "description": "A Karma plugin. Preprocess a file using preprocess.",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/HenriqueLimas/karma-preprocess-preprocessor.git"
+  },
+  "author": "Henrique Limas <henrique.ramos.limas@gmail.com>",
+  "keywords": [
+    "karma-plugin",
+    "karma-preprocessor",
+    "gulp-preprocess",
+    "grunt-preprocess",
+    "directive",
+    "ENV",
+    "environment",
+    "ifdef",
+    "ifndef",
+    "echo",
+    "include",
+    "exclude",
+    "process",
+    "preprocess",
+    "preprocessor",
+    "pragma"
+  ],
+  "peerDependencies": {
+    "karma": ">=0.11"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "preprocess": "^3.0.2"
+  }
+}
