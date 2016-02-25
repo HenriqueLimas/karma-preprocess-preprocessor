@@ -7,7 +7,7 @@ function preprocessPreprocessor(args, config, helper) {
   return function(content, file, done) {
     config = config || {};
 
-    var options = config.options || args.options || {};
+    var options = helper.merge({}, config.options, args.options);
 
     var context = config.context;
 
