@@ -39,6 +39,40 @@ module.exports = function(config) {
 }
 ```
 
+If you need to process both, html and js, you can use karmas `customPreprocessors`:
+
+```js
+// karma.conf.js
+module.exports = function(config) {
+  config.set({
+    customPreprocessors: {
+      preprocess_js: {
+        base: 'preprocess',
+        options: { type: 'js' }
+      },
+      preprocess_html: {
+        base: 'preprocess',
+        options: { type: 'html' }
+      }
+    },
+    preprocess: {
+      'src/js/**/*.js': ['preprocess_js'],
+      'src/templates/**/*.html': ['preprocess_html']
+    },
+
+    preprocessPreprocessor: {
+      // Context passed to preprocess plugin, can be a Function, URL string or an object
+      context: __dirname + '/my-context.json'
+    },
+
+    // make sure to include the .js files
+    files: [
+      'src/js/**/*.js'
+    ]
+  })
+}
+```
+
 ----
 
 For more information on Karma see the [karma] homepage.
