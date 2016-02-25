@@ -3,11 +3,11 @@
 var fs = require('fs');
 var pp = require('preprocess');
 
-function preprocessPreprocessor(config, helper) {
+function preprocessPreprocessor(args, config, helper) {
   return function(content, file, done) {
     config = config || {};
 
-    var options = config.options || {};
+    var options = config.options || args.options || {};
 
     var context = config.context;
 
@@ -37,7 +37,7 @@ function preprocessPreprocessor(config, helper) {
   };
 }
 
-preprocessPreprocessor.$inject = ['config.preprocessPreprocessor', 'helper'];
+preprocessPreprocessor.$inject = ['args', 'config.preprocessPreprocessor', 'helper'];
 
 module.exports = {
   'preprocessor:preprocess': ['factory', preprocessPreprocessor]
